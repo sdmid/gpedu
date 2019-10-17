@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>支付领取福豆</title>
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body>
+		<div class="content">
+			<div class="top">
+				<p class="text">支付领取福豆</p>
+				<img class="logo" src="img/pay-success.png">
+			</div>
+			<div class="center" id="getHLotbox">
+				<p class="text">您此次消费</p>
+				<div class="container">
+					<p class="h1">获得<span id="hlNumber">0</span>福豆</p>
+					<p class="h2">（网购可以抵扣<span id="hlMoney">0</span>元，领取立即体验）</p>
+					<a id="showPopup" class="btn">点击领取</a>
+				</div>
+			</div>
+			<div class="footer" id="banner1">
+				<p class="h1">靠谱内供 · 福分抵扣现金</p>
+				<p class="h2">一个帮你省钱的网站，用了不要太感动</p>
+			</div>
+			<div class="footer-banner" id="banner2"></div>
+		</div>
+		<div class="popup-backdrop"></div>
+		<div class="popup popup-form">
+			<div class="popup-box">
+				<p class="title">输入手机号领取</p>
+				<div class="input-row">
+					<img class="icon" src="img/phone.png"/>
+					<div class="left-border"></div>
+					<input id="phone" type="number" class="input" placeholder="输入手机号" maxlength="11" onKeyUp="value=value.replace(/\D/g,'');if(this.value.length>11) this.value=this.value.substr(0,11)" pattern="[0-9]*">
+					<div class="loader-01"></div>
+					<button class="vcode-btn">发送验证码</button>
+				</div>
+				<div class="input-row pcode-input">
+					<img class="icon" src="img/pcode.png" style="width: 0.44rem;height: 0.44rem;margin: 0.43rem 0.23rem 0.47rem 0.04rem;"/>
+					<div class="left-border"></div>
+					<input id="pcode" type="text" class="input" placeholder="系统验证码">
+					<img class="pcode-img" src="" onclick="getCaptcha"/>
+				</div>
+				<div class="input-row vcode-input">
+					<img class="icon" src="img/vcode.png" style="width: 0.4rem;height: 0.45rem;margin: 0.43rem 0.25rem 0.47rem 0.06rem;"/>
+					<div class="left-border"></div>
+					<input id="vcode" type="number" class="input" placeholder="短信验证码" maxlength="6" onKeyUp="value=value.replace(/\D/g,'');if(this.value.length>6) this.value=this.value.substr(0,6)" pattern="[0-9]*">
+					<div class="loader-02"></div>
+					<div class="vcodeError"></div>
+				</div>
+				<p class="error-tips"></p>
+				
+				<button id="getHappyLot" class="btn" disabled>领取福豆</button>
+				<p class="tips">短信验证即帮您成为福分系统会员、福分领取行为</p>
+			</div>
+			<div class="close-box"><img src="img/close.png"/></div>
+		</div>
+		
+		<div class="popup popup-message">
+			<div class="popup-box">
+				<p class="title">领取成功</p>
+				<p class="h2">立即体验，靠谱内供 · 购物福分抵现金</p>
+				<img class="lot-success" src="img/lot-success.png" />
+				<button id="goEcshop" class="btn">去逛逛</button>
+			</div>
+			<div class="close-box"><img src="img/close.png"/></div>
+		</div>
+		<!-- <script src="js/vconsole.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			new VConsole();
+		</script> -->
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="js/http.js" type="text/javascript" charset="utf-8"></script> -->
+		<script async src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
